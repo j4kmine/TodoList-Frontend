@@ -1,0 +1,33 @@
+.todo__form {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  height: 100px;
+  margin: 8px;
+}
+
+.todo__form > form > input {
+  border: 2px solid whitesmoke;
+  padding: 16px;
+  font-size: 16px;
+  outline: 0;
+  margin-right: 4px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.todo__form > form > button {
+  cursor: pointer;
+  background-color: #25af79;
+  color: #FAFCFB;
+  border-radius: 16px;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  outline: 0;
+  font-weight: 700;
+}
+
+.todo__form > form > button:hover {
+  background-color: #44b187;
+}
