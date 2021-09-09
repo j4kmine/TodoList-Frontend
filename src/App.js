@@ -63,7 +63,7 @@ function App() {
     const addedTodo = [
       ...todos,
       {
-        task: value,
+        title: value,
         completed: false,
       },
     ];
