@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TodoInput from "./components/TodoInput";
@@ -9,24 +10,42 @@ import Register from "./Register";
 
 function App() {
 
+  // Fetch Todos from JSONPLACEHOLDER
+  useEffect(() => {
+    async function fetchTodos() {
+      try {
+        const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
+
+        console.log(res.data);
+        setTodos(res.data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchTodos();
+  }, [])
+
+
+
   // Data Dummy
   const [todos, setTodos] = useState([
-    {
-      task: "Build Mini Project",
-      completed: true,
-    },
-    {
-      task: "Learn React",
-      completed: true,
-    },
-    {
-      task: "Workout",
-      completed: false,
-    },
-    {
-      task: "Do assigments",
-      completed: false,
-    },
+    // {
+    //   task: "Build Mini Project",
+    //   completed: true,
+    // },
+    // {
+    //   task: "Learn React",
+    //   completed: true,
+    // },
+    // {
+    //   task: "Workout",
+    //   completed: false,
+    // },
+    // {
+    //   task: "Do assigments",
+    //   completed: false,
+    // },
   ]);
 
   // Value Input

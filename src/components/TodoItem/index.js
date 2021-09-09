@@ -13,7 +13,7 @@ const TodoItem = ({todos, handleComplete, handleDelete}) => {
           }
         >
 
-          <p>{todo.task}</p>
+          <p>{todo.title}</p>
 
           <button
             onClick={() => handleComplete(index)}
