@@ -3,6 +3,9 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TodoInput from "./components/TodoInput";
 import TodoItem from "./components/TodoItem";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
 
 function App() {
 
@@ -70,20 +73,34 @@ function App() {
   };
 
   return (
+    <Router>
     <div>
       {/* Navbar */}
       <Navbar />
-
+      <Switch>
       <div className="container">
+        <Route exact path="/">
 
         {/* Todo Input */}
         <TodoInput handleSubmit={handleSubmit} value={value} onChange={(e) => setValue(e.target.value)} />
 
         {/* Todo Item */}
         <TodoItem todos={todos} handleComplete={(index) => handleComplete(index)} handleDelete={(index) => handleDelete(index)} />
+        </Route >
 
+        {/* Login Routing */}
+        <Route path="/login">
+          <Login />
+        </Route>
+
+        {/* Register Routing */}
+        <Route path="/register">
+          <Register />
+        </Route>
       </div>
+      </Switch>
     </div>
+    </Router>
   );
 }
 

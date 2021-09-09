@@ -11,3 +11,12 @@
   text-align: center;
   min-width: 500px;
 }
+
+.navbar p:nth-child(1) {
+  flex: 1;
+}
+
+.login__button {
+  color: #FAFCFB;
+  font-size: 16px;
+}
